@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController  {
-    
+class ViewController: UIViewController, UIContextMenuInteractionDelegate  {
 
     
     let button = UIButton()
+    
+    let button2 = UIButton()
+    
+    let button3 = UIButton()
     
     let favorite = UIAction(title: "Favorite",
       image: UIImage(systemName: "heart.fill")) { _ in
@@ -34,17 +37,23 @@ class ViewController: UIViewController  {
         
         
         
-        button.setTitle("Test", for: .normal)
+        button.setTitle("pop", for: .normal)
         button.setTitleColor( .blue, for: .normal)
         
-        /// this presents only on long press and makes background blur and this is from ios 13
-//        let interaction = UIContextMenuInteraction(delegate: self)
-//        button.addInteraction(interaction)
+        button2.setTitle("context", for: .normal)
+        button2.setTitleColor( .blue, for: .normal)
+        
+        button3.setTitle("menuBtn", for: .normal)
+        button3.setTitleColor( .blue, for: .normal)
+        
+//        / this presents only on long press and makes background blur and this is from ios 13
+        let interaction = UIContextMenuInteraction(delegate: self)
+        button2.addInteraction(interaction)
         
         
 //        / this supports only in ios 14 and above
-//        button.showsMenuAsPrimaryAction = true
-//        button.menu = UIMenu(title: "", children: [favorite,favorite1,favorite2])
+        button3.showsMenuAsPrimaryAction = true
+        button3.menu = UIMenu(title: "", children: [favorite,favorite1,favorite2])
 
         
         
@@ -55,28 +64,38 @@ class ViewController: UIViewController  {
         
         
         button.translatesAutoresizingMaskIntoConstraints = false
+        button2.translatesAutoresizingMaskIntoConstraints = false
+        button3.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addSubview(button)
-//        self.view.addSubview(tableView)
+        self.view.addSubview(button2)
+        self.view.addSubview(button3)
+
         button.addTarget(self, action: #selector(presentPop(sender:)), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                                     button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -100)
+                                     button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -100),
+                                     
+                                     button2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                                                                  button2.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -150),
+                                     
+                                     button3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                                                                  button3.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -200)
                                     ])
         
         
     }
     
-//    func contextMenuInteraction(_ interaction: UIContextMenuInteraction,
-//                                configurationForMenuAtLocation location: CGPoint)
-//    -> UIContextMenuConfiguration? {
-//
-//        return UIContextMenuConfiguration(identifier: nil,
-//                                          previewProvider: nil) { _ in
-//            UIMenu(title: "", children: [self.favorite, self.favorite1, self.favorite2])
-//        }
-//    }
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction,
+                                configurationForMenuAtLocation location: CGPoint)
+    -> UIContextMenuConfiguration? {
+
+        return UIContextMenuConfiguration(identifier: nil,
+                                          previewProvider: nil) { _ in
+            UIMenu(title: "", children: [self.favorite, self.favorite1, self.favorite2])
+        }
+    }
     
     @objc func presentPop(sender: UIButton){
         let popoverVC = PopoverViewController()
