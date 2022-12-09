@@ -16,6 +16,7 @@
 		13B73E95294310B9002AA120 /* AppMenuPocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B73E94294310B9002AA120 /* AppMenuPocTests.swift */; };
 		13B73E9F294310B9002AA120 /* AppMenuPocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B73E9E294310B9002AA120 /* AppMenuPocUITests.swift */; };
 		13B73EA1294310B9002AA120 /* AppMenuPocUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B73EA0294310B9002AA120 /* AppMenuPocUITestsLaunchTests.swift */; };
+		13B73EAE29431929002AA120 /* ViewFactroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B73EAD29431928002AA120 /* ViewFactroy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		13B73E9A294310B9002AA120 /* AppMenuPocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppMenuPocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B73E9E294310B9002AA120 /* AppMenuPocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuPocUITests.swift; sourceTree = "<group>"; };
 		13B73EA0294310B9002AA120 /* AppMenuPocUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuPocUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		13B73EAD29431928002AA120 /* ViewFactroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactroy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				13B73E7D294310B5002AA120 /* AppDelegate.swift */,
 				13B73E7F294310B5002AA120 /* SceneDelegate.swift */,
 				13B73E81294310B5002AA120 /* ViewController.swift */,
+				13B73EAD29431928002AA120 /* ViewFactroy.swift */,
 				13B73E83294310B5002AA120 /* Main.storyboard */,
 				13B73E86294310B9002AA120 /* Assets.xcassets */,
 				13B73E88294310B9002AA120 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				13B73E82294310B5002AA120 /* ViewController.swift in Sources */,
 				13B73E7E294310B5002AA120 /* AppDelegate.swift in Sources */,
 				13B73E80294310B5002AA120 /* SceneDelegate.swift in Sources */,
+				13B73EAE29431929002AA120 /* ViewFactroy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
